@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/dashboardFragment">
+
+    <action
+        android:id="@+id/action_global_dashboardFragment"
+        app:destination="@+id/dashboardFragment"
+        app:popUpTo="@id/navigation" />
+
+    <action
+        android:id="@+id/action_global_aquariumsFragment"
+        app:destination="@+id/aquariumsFragment"
+        app:popUpTo="@id/navigation" />
+    <action
+        android:id="@+id/action_global_calculatorFragment"
+        app:destination="@+id/calculatorFragment"
+        app:popUpTo="@id/navigation"
+        app:popUpToInclusive="false" />
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.example.aquariummanager.DashboardFragment"
+        android:label="fragment_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+    <fragment
+        android:id="@+id/aquariumsFragment"
+        android:name="com.example.aquariummanager.aquariumsFragment"
+        android:label="fragment_aquariums"
+        tools:layout="@layout/fragment_aquariums" />
+    <fragment
+        android:id="@+id/calculatorFragment"
+        android:name="com.example.aquariummanager.CalculatorFragment"
+        android:label="fragment_calculator"
+        tools:layout="@layout/fragment_calculator" />
+</navigation>

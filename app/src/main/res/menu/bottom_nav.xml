@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="dashboard"
+        android:id="@+id/dashboard"
+        android:icon="@drawable/dashboard"/>
+    <item android:title="aquariums"
+        android:id="@+id/aquariums"
+        android:icon="@drawable/aquarium_add"/>
+    <item android:title="calculator"
+        android:id="@+id/calculator"
+        android:icon="@drawable/calculator"/>
+</menu>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Aquarium Manager</string>
+    <string name="substrateText">Substrate: %.1f /Tank: %.1f</string>
+    <string name="volumeText">Water: %.1f</string>
+    <string-array name="length_array">
+        <item>mm</item>
+        <item>cm</item>
+        <item>in</item>
+    </string-array>
+</resources>

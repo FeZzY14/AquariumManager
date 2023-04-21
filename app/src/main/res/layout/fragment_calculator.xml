@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="calcViewModel"
+            type="com.example.aquariummanager.viewModels.CalculatorViewModel" />
+    </data>
+<ScrollView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".CalculatorFragment"
+        android:isScrollContainer="true">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/descriptionImage"
+            android:layout_width="400dp"
+            android:layout_height="250dp"
+            android:layout_marginBottom="550dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/roundedImageView"
+            app:srcCompat="@drawable/diagram4c" />
+
+        <RadioGroup
+            android:id="@+id/lengthRadioGroup"
+            android:layout_width="160dp"
+            android:layout_height="49dp"
+            android:layout_marginEnd="220dp"
+            android:layout_marginBottom="440dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionImage">
+
+            <RadioButton
+                android:id="@+id/cmRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="cm" />
+
+            <RadioButton
+                android:id="@+id/mmRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="mm" />
+
+            <RadioButton
+                android:id="@+id/inRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="in" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/lengthTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="220dp"
+            android:text="Length"
+            android:textAlignment="center"
+            android:textColor="@color/darkBlue"
+            app:layout_constraintBottom_toTopOf="@+id/lengthRadioGroup"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionImage" />
+
+        <TextView
+            android:id="@+id/volumeLabelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="25dp"
+            android:text="Volume"
+            android:textColor="@color/darkBlue"
+            app:layout_constraintBottom_toTopOf="@+id/volumeRadioGroup"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionImage" />
+
+        <RadioGroup
+            android:id="@+id/volumeRadioGroup"
+            android:layout_width="200dp"
+            android:layout_height="49dp"
+            android:layout_marginBottom="440dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/lengthRadioGroup"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionImage">
+
+            <RadioButton
+                android:id="@+id/litersButton"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="liters" />
+
+            <RadioButton
+                android:id="@+id/gallonsButton"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="gallons" />
+        </RadioGroup>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lengthTextInputLayout"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="150dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/WidthTextInputLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionImage">
+
+            <EditText
+                android:id="@+id/lengthTextInput"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="A"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/WidthTextInputLayout"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="150dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/lengthTextInputLayout"
+            app:layout_constraintEnd_toStartOf="@+id/heightTextInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionImage">
+
+            <EditText
+                android:id="@+id/widthTextInput"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="B"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/heightTextInputLayout"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="150dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/WidthTextInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionImage">
+
+            <EditText
+                android:id="@+id/heightTextInput"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:autofillHints="no"
+                android:hint="C"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/topIndTextInputLayout"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="250dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/subsHeigTextInputLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lengthTextInputLayout">
+
+            <EditText
+                android:id="@+id/topIndTextInput"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="X"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/subsHeigTextInputLayout"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="250dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/topIndTextInputLayout"
+            app:layout_constraintEnd_toStartOf="@+id/thicTextInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/WidthTextInputLayout">
+
+            <EditText
+                android:id="@+id/subsHeigTextInput"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="Y"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/thicTextInputLayout"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="250dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/subsHeigTextInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/heightTextInputLayout">
+
+            <EditText
+                android:id="@+id/thicTextInput"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:autofillHints="no"
+                android:hint="Z"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/substrateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginBottom="200dp"
+            android:text="@{@string/substrateText(calcViewModel.substrateVolume, calcViewModel.tankVolume)}"
+            android:textColor="@color/darkBlue"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/subsHeigTextInputLayout" />
+
+        <TextView
+            android:id="@+id/volumeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginBottom="150dp"
+            android:text="@{@string/volumeText(calcViewModel.waterVolume)}"
+            android:textColor="@color/lightBlue"
+            android:textIsSelectable="false"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/substrateTextView" />
+
+        <Button
+            android:id="@+id/clearButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="250dp"
+            android:text="Clear"
+            app:layout_constraintBottom_toTopOf="@+id/heightTextInputLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/volumeRadioGroup" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+</layout>
