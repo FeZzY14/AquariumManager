@@ -1,4 +1,4 @@
-package com.example.aquariummanager
+package com.example.aquariummanager.fragments
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -6,11 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.OnBackPressedCallback
-import androidx.navigation.findNavController
 import com.example.aquariummanager.databinding.FragmentDashboardBinding
 import com.example.aquariummanager.viewModels.DashboardViewModel
-import java.time.Clock.system
 
 class DashboardFragment : Fragment() {
 

@@ -1,4 +1,4 @@
-package com.example.aquariummanager
+package com.example.aquariummanager.fragments
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.aquariummanager.databinding.FragmentAquariumsBinding
-import com.example.aquariummanager.databinding.FragmentDashboardBinding
 import com.example.aquariummanager.viewModels.AquariumsViewModel
 
 class aquariumsFragment : Fragment() {

@@ -22,17 +22,17 @@
 
     <fragment
         android:id="@+id/dashboardFragment"
-        android:name="com.example.aquariummanager.DashboardFragment"
+        android:name="com.example.aquariummanager.fragments.DashboardFragment"
         android:label="fragment_dashboard"
         tools:layout="@layout/fragment_dashboard" />
     <fragment
         android:id="@+id/aquariumsFragment"
-        android:name="com.example.aquariummanager.aquariumsFragment"
+        android:name="com.example.aquariummanager.fragments.aquariumsFragment"
         android:label="fragment_aquariums"
         tools:layout="@layout/fragment_aquariums" />
     <fragment
         android:id="@+id/calculatorFragment"
-        android:name="com.example.aquariummanager.CalculatorFragment"
+        android:name="com.example.aquariummanager.fragments.CalculatorFragment"
         android:label="fragment_calculator"
         tools:layout="@layout/fragment_calculator" />
 </navigation>

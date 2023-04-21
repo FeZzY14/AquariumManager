@@ -157,4 +157,16 @@ class CalculatorViewModel : ViewModel() {
             _substrateVolume.value = (_substrateVolume.value)?.times(GALLONS_TO_LITERS)
         }
     }
+
+    fun clear(){
+        _length = 0.0;
+        _width = 0.0;
+        _height = 0.0;
+        _topIndent = 0.0
+        _substrateHeight = 0.0
+        _glassThickness = 0.0
+        _waterVolume.value = 0.0
+        _substrateVolume.value = 0.0
+        _tankVolume.value = 0.0
+    }
 }

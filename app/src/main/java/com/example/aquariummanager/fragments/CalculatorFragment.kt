@@ -1,4 +1,4 @@
-package com.example.aquariummanager
+package com.example.aquariummanager.fragments
 
 import android.os.Bundle
 import android.text.Editable
@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
+import com.example.aquariummanager.R
 import com.example.aquariummanager.databinding.FragmentCalculatorBinding
 import com.example.aquariummanager.viewModels.CalculatorViewModel
 
@@ -21,36 +22,29 @@ class CalculatorFragment : Fragment(){
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_calculator ,container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_calculator,container, false)
         return binding.root
     }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //viewModel = ViewModelProvider(this).get(CalculatorViewModel::class.java)
-        //radio buttons handling
         binding.calcViewModel = viewModel;
         binding.lifecycleOwner = viewLifecycleOwner;
 
         binding.lengthRadioGroup.setOnCheckedChangeListener {_, _ ->
             if (binding.mmRadioButton.isChecked) {
                 viewModel.changeLengthUnits("mm")
-                //todo change units to mm
             } else if (binding.cmRadioButton.isChecked) {
-                //todo change units ti cm
                 viewModel.changeLengthUnits("cm")
             } else if (binding.inRadioButton.isChecked) {
-                //todo change unit to in
                 viewModel.changeLengthUnits("in")
             }
         }
         binding.volumeRadioGroup.setOnCheckedChangeListener {_, _ ->
             if (binding.litersButton.isChecked) {
-                //todo change units to liters
                 viewModel.changeVolumeUnits("liters")
             } else if (binding.gallonsButton.isChecked) {
-                //todo change units to gallons
                 viewModel.changeVolumeUnits("gallons")
             }
         }
@@ -59,7 +53,6 @@ class CalculatorFragment : Fragment(){
         val textWatcher = object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                //viewModel.change();
                 var length = 0.0
                 var width = 0.0
                 var height = 0.0
@@ -104,16 +97,14 @@ class CalculatorFragment : Fragment(){
 
 
         binding.clearButton.setOnClickListener {
-            //viewModel.to();
             binding.lengthTextInput.setText("");
             binding.heightTextInput.setText("");
             binding.widthTextInput.setText("");
             binding.topIndTextInput.setText("");
             binding.subsHeigTextInput.setText("");
             binding.thicTextInput.setText("");
+            viewModel.clear()
         }
-
-        // TODO: Use the ViewModel
     }
 
 
