@@ -15,23 +15,11 @@ private const val GALLONS_TO_LITERS = 3.785411784
 
 class CalculatorViewModel : ViewModel() {
     private var _length = 0.0
-    val length: Double
-        get() = _length
     private var _width = 0.0
-    val width: Double
-        get() = _width
     private var _height = 0.0
-    val height: Double
-        get() = _height
     private var _topIndent = 0.0
-    val topIndent: Double
-        get() = _topIndent
     private var _substrateHeight = 0.0
-    val substrateHeight: Double
-        get() = _substrateHeight
     private var _glassThickness = 0.0
-    val glassThickness: Double
-        get() = _glassThickness
     private var _substrateVolume = MutableLiveData(0.0)
     val substrateVolume: LiveData<Double>
         get() = _substrateVolume
@@ -42,11 +30,7 @@ class CalculatorViewModel : ViewModel() {
     val waterVolume: LiveData<Double>
         get() = _waterVolume
     private var _lengthUnits = "mm"
-    val lengthUnits: String
-        get() = _lengthUnits
     private var _volumeUnits = "liters"
-    val volumeUnits: String
-        get() = _volumeUnits
 
     init {
         _tankVolume.value = 0.0

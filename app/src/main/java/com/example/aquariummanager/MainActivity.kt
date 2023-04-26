@@ -28,21 +28,4 @@ class MainActivity : AppCompatActivity() {
             true
         }
     }
-
-    override fun onBackPressed() {
-        //data save
-        showExitDialogue()
-    }
-
-    private fun showExitDialogue() {
-        MaterialAlertDialogBuilder(this)
-            .setMessage("do you want to exit?")
-            .setCancelable(false)
-            .setNegativeButton("no"){ _,_->
-            }
-            .setPositiveButton("yes") { _,_->
-                finish()
-            }
-            .show()
-    }
 }

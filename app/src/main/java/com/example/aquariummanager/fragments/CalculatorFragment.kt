@@ -7,11 +7,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import com.example.aquariummanager.R
 import com.example.aquariummanager.databinding.FragmentCalculatorBinding
 import com.example.aquariummanager.viewModels.CalculatorViewModel
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class CalculatorFragment : Fragment(){
 
@@ -23,6 +25,11 @@ class CalculatorFragment : Fragment(){
         savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_calculator,container, false)
+        activity?.onBackPressedDispatcher?.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                showExitDialogue()
+            }
+        })
         return binding.root
     }
 
@@ -107,7 +114,15 @@ class CalculatorFragment : Fragment(){
         }
     }
 
-
-
-
+    private fun showExitDialogue() {
+        MaterialAlertDialogBuilder(requireContext())
+            .setMessage("do you want to exit?")
+            .setCancelable(false)
+            .setNegativeButton("no"){ _,_->
+            }
+            .setPositiveButton("yes") { _,_->
+                requireActivity().finish()
+            }
+            .show()
+    }
 }

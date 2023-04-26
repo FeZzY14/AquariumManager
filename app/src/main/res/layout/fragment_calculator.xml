@@ -273,6 +273,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="250dp"
             android:text="Clear"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/heightTextInputLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

@@ -27,12 +27,23 @@
         tools:layout="@layout/fragment_dashboard" />
     <fragment
         android:id="@+id/aquariumsFragment"
-        android:name="com.example.aquariummanager.fragments.aquariumsFragment"
+        android:name="com.example.aquariummanager.fragments.AquariumsFragment"
         android:label="fragment_aquariums"
-        tools:layout="@layout/fragment_aquariums" />
+        tools:layout="@layout/fragment_aquariums" >
+        <action
+            android:id="@+id/action_aquariumsFragment_to_aquariumAddFragment"
+            app:destination="@id/aquariumAddFragment"
+            app:popUpTo="@id/aquariumsFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
     <fragment
         android:id="@+id/calculatorFragment"
         android:name="com.example.aquariummanager.fragments.CalculatorFragment"
         android:label="fragment_calculator"
         tools:layout="@layout/fragment_calculator" />
+    <fragment
+        android:id="@+id/aquariumAddFragment"
+        android:name="com.example.aquariummanager.fragments.AquariumAddFragment"
+        android:label="fragment_aquarium_add"
+        tools:layout="@layout/fragment_aquarium_add" />
 </navigation>
