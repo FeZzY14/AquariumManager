@@ -35,6 +35,10 @@
             app:destination="@id/aquariumAddFragment"
             app:popUpTo="@id/aquariumsFragment"
             app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_aquariumsFragment_to_aquariumPropertiesFragment"
+            app:destination="@id/aquariumPropertiesFragment"
+            app:popUpTo="@id/aquariumsFragment" />
     </fragment>
     <fragment
         android:id="@+id/calculatorFragment"
@@ -46,4 +50,12 @@
         android:name="com.example.aquariummanager.fragments.AquariumAddFragment"
         android:label="fragment_aquarium_add"
         tools:layout="@layout/fragment_aquarium_add" />
+    <fragment
+        android:id="@+id/aquariumPropertiesFragment"
+        android:name="com.example.aquariummanager.fragments.AquariumPropertiesFragment"
+        android:label="AquariumPropertiesFragment" >
+        <argument
+            android:name="position"
+            app:argType="integer" />
+    </fragment>
 </navigation>

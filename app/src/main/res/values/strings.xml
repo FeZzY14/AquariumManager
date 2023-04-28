@@ -3,6 +3,10 @@
     <string name="substrateText">Substrate: %.1f /Tank: %.1f</string>
     <string name="volumeText">Water: %.1f</string>
     <string name="date">start date:\n%s</string>
+    <string name="inhabitants">inhabitants\n%d</string>
+    <string name="equipment">Equipment\n%d</string>
+    <string name="tasks">tasks: %d</string>
+    <string name="measurements">measurements: %d</string>
     <string-array name="length_array">
         <item>mm</item>
         <item>cm</item>

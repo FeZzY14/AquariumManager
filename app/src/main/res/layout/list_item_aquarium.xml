@@ -8,6 +8,9 @@
         <variable
             name="aquarium"
             type="com.example.aquariummanager.data.AquariumItem" />
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener"/>
     </data>
 
     <androidx.cardview.widget.CardView
@@ -16,6 +19,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
+        android:onClick="@{clickListener}"
         card_view:cardCornerRadius="20dp"
         card_view:cardBackgroundColor = "@color/lightestBlue"
         app:cardElevation="2dp"

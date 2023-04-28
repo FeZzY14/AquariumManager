@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.annotation.RequiresApi
+import androidx.core.view.get
 import androidx.core.view.isEmpty
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
@@ -53,9 +54,10 @@ class AquariumsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.lifecycleOwner = viewLifecycleOwner
         binding.addButton.setOnClickListener {
-            //viewModel.addAquarium("test", R.drawable.dashboard_image, "aef", 125.1, "@drawable/dashboard_image", 11.1)
+
             findNavController().navigate(R.id.action_aquariumsFragment_to_aquariumAddFragment);
         }
+
     }
 
     private fun showExitDialogue() {

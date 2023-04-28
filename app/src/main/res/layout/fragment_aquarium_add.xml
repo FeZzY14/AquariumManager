@@ -17,7 +17,6 @@
         android:id="@+id/aquaPhoto"
         android:layout_width="300dp"
         android:layout_height="200dp"
-        android:src="@drawable/noimage"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -25,18 +24,35 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.084" />
 
-    <Button
-        android:id="@+id/addImageButton"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/darkestBlue"
-        android:foreground="@drawable/camera_icon"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/addPhotoButton"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:backgroundTint="@color/darkBlue"
+        app:cornerRadius="10dp"
+        app:icon="@drawable/camera_icon"
+        app:iconTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.36"
         app:layout_constraintStart_toEndOf="@+id/aquaPhoto"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.078" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/addImageButton"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:backgroundTint="@color/darkBlue"
+        app:cornerRadius="10dp"
+        app:icon="@drawable/image_icon"
+        app:iconTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintStart_toEndOf="@+id/aquaPhoto"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.20999998" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/aquaNameLayout"
