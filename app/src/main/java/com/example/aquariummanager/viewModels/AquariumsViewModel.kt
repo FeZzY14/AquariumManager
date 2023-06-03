@@ -18,7 +18,7 @@ class AquariumsViewModel : ViewModel() {
     }
 
     fun getItem(index:Int): AquariumItem {
-        return list.get(index);
+        return list[index];
     }
 
     fun imageInitialized():Boolean{

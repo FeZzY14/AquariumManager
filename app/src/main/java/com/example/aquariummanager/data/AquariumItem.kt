@@ -1,9 +1,6 @@
 package com.example.aquariummanager.data
 
 import android.graphics.Bitmap
-import java.text.DateFormat
-import java.time.LocalDate
-import java.util.Date
 
 data class AquariumItem(
     val name: String,
@@ -12,7 +9,17 @@ data class AquariumItem(
     val volume: Double,
     val description: String,
     var measureParam: Double,
-    ) {
+) {
+    val equipment = ArrayList<String>()
+    val inhabitants = ArrayList<String>()
+    val measurements = ArrayList<Int>()
+    val tasks = ArrayList<String>()
+    fun addEquipment(newEquipment: String) {
+        equipment.add(newEquipment)
+    }
 
+    fun addInhabitant(newInhabitant: String) {
+        inhabitants.add(newInhabitant)
+    }
 
 }

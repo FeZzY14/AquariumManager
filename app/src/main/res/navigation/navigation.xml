@@ -57,5 +57,19 @@
         <argument
             android:name="position"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_aquariumPropertiesFragment_to_aquariumItemsFragment"
+            app:destination="@id/aquariumItemsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aquariumItemsFragment"
+        android:name="com.example.aquariummanager.fragments.AquariumItemsFragment"
+        android:label="AquariumItemsFragment" >
+        <argument
+            android:name="ItemType"
+            app:argType="string" />
+        <argument
+            android:name="position"
+            app:argType="integer" />
     </fragment>
 </navigation>

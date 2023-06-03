@@ -1,6 +1,5 @@
 package com.example.aquariummanager.fragments
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.aquariummanager.R
 import com.example.aquariummanager.data.AquariumItem
@@ -36,6 +36,27 @@ class AquariumPropertiesFragment : Fragment() {
         aquarium = viewModel.getItem(position)
         binding.aquarium = aquarium
         binding.imageView.setImageBitmap(aquarium.image)
+
+        binding.buttonEquipment.setOnClickListener{
+            val direction = AquariumPropertiesFragmentDirections.actionAquariumPropertiesFragmentToAquariumItemsFragment("equipment", position)
+            it.findNavController().navigate(direction)
+        }
+
+        binding.buttonInhabitants.setOnClickListener{
+            val direction = AquariumPropertiesFragmentDirections.actionAquariumPropertiesFragmentToAquariumItemsFragment("inhabitant", position)
+            it.findNavController().navigate(direction)
+        }
+
+        binding.buttonTasks.setOnClickListener{
+            val direction = AquariumPropertiesFragmentDirections.actionAquariumPropertiesFragmentToAquariumItemsFragment("task", position)
+            it.findNavController().navigate(direction)
+        }
+
+        binding.buttonMeasurements.setOnClickListener{
+            val direction = AquariumPropertiesFragmentDirections.actionAquariumPropertiesFragmentToAquariumItemsFragment("measurement", position)
+            it.findNavController().navigate(direction)
+        }
+
         return binding.root;
     }
 

@@ -7,6 +7,7 @@
     <string name="equipment">Equipment\n%d</string>
     <string name="tasks">tasks: %d</string>
     <string name="measurements">measurements: %d</string>
+    <string name="noItemText">you hava no %ss you can add one with the plus button</string>
     <string-array name="length_array">
         <item>mm</item>
         <item>cm</item>

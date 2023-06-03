@@ -33,11 +33,8 @@ class AquariumsFragment : Fragment() {
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_aquariums ,container, false)
 
-        //aquariumsList.addAquarium("test", R.drawable.dashboard_image, LocalDate.now(), 125.1, "@drawable/dashboard_image", 11.1)
-        //viewModel.addAquarium("test", R.drawable.dashboard_image, "aef", 125.1, "@drawable/dashboard_image", 11.1)
-
-        val adapter = AquariumsAdapter(viewModel.list);
-        binding.aquariumList.adapter = adapter;
+        val adapter = AquariumsAdapter(viewModel.list)
+        binding.aquariumList.adapter = adapter
 
         activity?.onBackPressedDispatcher?.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
