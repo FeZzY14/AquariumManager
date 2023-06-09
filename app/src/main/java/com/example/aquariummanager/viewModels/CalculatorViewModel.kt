@@ -38,6 +38,17 @@ class CalculatorViewModel : ViewModel() {
         _substrateVolume.value = 0.0
     }
 
+    /**
+     * Vypočítanie všetkých objemov.
+     *
+     * @param length zadaná dĺžka akvária
+     * @param width zadaná šírka akvária
+     * @param height zadaná výška akvária
+     * @param subs zadaná výška substrátu akvária
+     * @param top zadaná výška od hrany po hladinu
+     * @param thick zadaná hrúbka skla akvária
+     * @param units zadané jednotky
+     */
     fun calculateVolumes(length: Double, width: Double, height: Double, subs: Double, top: Double, thick: Double, units:String) {
         _lengthUnits = units;
         _length = length
@@ -49,6 +60,10 @@ class CalculatorViewModel : ViewModel() {
         calculate()
     }
 
+    /**
+     * Vypočítanie všetkých objemov a objemu vody.
+     *
+     */
     private fun calculate(){
         if (_volumeUnits == "liters") {
             when (_lengthUnits) {
@@ -70,6 +85,10 @@ class CalculatorViewModel : ViewModel() {
         calculateTankVolume()
     }
 
+    /**
+     * Vypočítanie objemu akvária.
+     *
+     */
     private fun calculateTankVolume() {
         if (_volumeUnits == "liters"){
             when (_lengthUnits) {
@@ -89,6 +108,10 @@ class CalculatorViewModel : ViewModel() {
         }
     }
 
+    /**
+     * Vypočítanie všetkých substrátu.
+     *
+     */
     private fun calculateSubstrateVolume() {
         if (_volumeUnits == "liters"){
             when (_lengthUnits) {
@@ -108,26 +131,51 @@ class CalculatorViewModel : ViewModel() {
         }
     }
 
+    /**
+     * zmena jedotiek na zadané jednotky
+     *
+     * @param newUnits nové jednotky
+     */
     fun changeLengthUnits(newUnits: String) {
         _lengthUnits = newUnits;
         calculate()
     }
 
+    /**
+     * Vracia vypočitaný objem vody
+     *
+     * @return vypočitaný objem vody
+     */
     private fun waterVolume():Double{
         return ((_length - (2.0 * _glassThickness)) * (_width - (2.0 * _glassThickness)) *
                     ((_height - _glassThickness - _topIndent - _substrateHeight)))
     }
 
+    /**
+     * Vracia vypočitaný objem akvária
+     *
+     * @return vypočitaný objem akvária
+     */
     private fun tankVolume():Double{
         return  ((_length - (2.0 * _glassThickness)) * (_width - (2.0 * _glassThickness)) *
                     ((_height - _glassThickness)))
     }
 
+    /**
+     * Vracia vypočitaný objem substrátu
+     *
+     * @return vypočitaný objem substrátu
+     */
     private fun substrateVolume():Double{
         return ((_length - (2.0 * _glassThickness)) * (_width - (2.0 * _glassThickness)) *
                     ((_substrateHeight)))
     }
 
+    /**
+     * Zmena jednotiek objemu podľa parametra
+     *
+     * @param newUnits nové jednotky objemu
+     */
     fun changeVolumeUnits(newUnits: String) {
         if (newUnits == "gallons") {
             _volumeUnits = newUnits
@@ -142,6 +190,10 @@ class CalculatorViewModel : ViewModel() {
         }
     }
 
+    /**
+     * Vymazanie všetkých údajov
+     *
+     */
     fun clear(){
         _length = 0.0;
         _width = 0.0;

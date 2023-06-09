@@ -24,7 +24,11 @@
         android:id="@+id/dashboardFragment"
         android:name="com.example.aquariummanager.fragments.DashboardFragment"
         android:label="fragment_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_dashboardFragment_to_aquariumItemsFragment"
+            app:destination="@id/aquariumItemsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/aquariumsFragment"
         android:name="com.example.aquariummanager.fragments.AquariumsFragment"
@@ -53,7 +57,8 @@
     <fragment
         android:id="@+id/aquariumPropertiesFragment"
         android:name="com.example.aquariummanager.fragments.AquariumPropertiesFragment"
-        android:label="AquariumPropertiesFragment" >
+        android:label="AquariumPropertiesFragment"
+        tools:layout="@layout/fragment_aquarium_properties">
         <argument
             android:name="position"
             app:argType="integer" />
@@ -64,10 +69,50 @@
     <fragment
         android:id="@+id/aquariumItemsFragment"
         android:name="com.example.aquariummanager.fragments.AquariumItemsFragment"
-        android:label="AquariumItemsFragment" >
+        android:label="AquariumItemsFragment"
+        tools:layout="@layout/fragment_aquarium_items">
         <argument
             android:name="ItemType"
             app:argType="string" />
+        <argument
+            android:name="position"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_aquariumItemsFragment_to_aquariumItemAddFragment"
+            app:destination="@id/aquariumItemAddFragment" />
+        <action
+            android:id="@+id/action_aquariumItemsFragment_to_aquariumTaskAddFragment"
+            app:destination="@id/aquariumTaskAddFragment" />
+        <action
+            android:id="@+id/action_aquariumItemsFragment_to_aquariumMeasurementAddFragment"
+            app:destination="@id/aquariumMeasurementAddFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aquariumItemAddFragment"
+        android:name="com.example.aquariummanager.fragments.AquariumItemAddFragment"
+        android:label="AquariumItemAddFragment"
+        tools:layout="@layout/fragment_aquarium_item_add">
+        <argument
+            android:name="itemType"
+            app:argType="string" />
+        <argument
+            android:name="position"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/aquariumTaskAddFragment"
+        android:name="com.example.aquariummanager.fragments.AquariumTaskAddFragment"
+        android:label="AquariumTaskAddFragment"
+        tools:layout="@layout/fragment_aquarium_task_add">
+        <argument
+            android:name="position"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/aquariumMeasurementAddFragment"
+        android:name="com.example.aquariummanager.fragments.AquariumMeasurementAddFragment"
+        android:label="fragment_aquarium_measurement_add"
+        tools:layout="@layout/fragment_aquarium_measurement_add" >
         <argument
             android:name="position"
             app:argType="integer" />

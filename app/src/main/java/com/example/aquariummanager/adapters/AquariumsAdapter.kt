@@ -1,6 +1,7 @@
 package com.example.aquariummanager.adapters
 
 import android.content.Context
+import android.graphics.BitmapFactory
 import android.graphics.Path.Direction
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +15,11 @@ import com.example.aquariummanager.databinding.FragmentCalculatorBinding
 import com.example.aquariummanager.databinding.ListItemAquariumBinding
 import com.example.aquariummanager.fragments.AquariumsFragmentDirections
 
+/**
+ * adaptér pre akváriá, používaný pre zobrazovanie akvárií v RecyclerView
+ *
+ * @property items zoznam všetkých akvárií
+ */
 class AquariumsAdapter(val items:ArrayList<AquariumItem>):
     RecyclerView.Adapter<AquariumsAdapter.ViewHolder>() {
 
@@ -27,7 +33,8 @@ class AquariumsAdapter(val items:ArrayList<AquariumItem>):
                     aquarium = item
                     executePendingBindings()
                 }
-                binding.aquaImage.setImageBitmap(item.image)
+                val imageByte = item.image
+                binding.image.setImageBitmap(BitmapFactory.decodeByteArray(imageByte, 0, imageByte!!.size))
                 binding.setClickListener {
                     val direction = AquariumsFragmentDirections.actionAquariumsFragmentToAquariumPropertiesFragment(position);
                     it.findNavController().navigate(direction)

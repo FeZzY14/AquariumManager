@@ -1,134 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".fragments.DashboardFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:id="@+id/dashboardImage"
-        android:layout_width="367dp"
-        android:layout_height="254dp"
-        android:layout_marginBottom="454dp"
-        android:cropToPadding="false"
-        android:src="@drawable/dashboard_image"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
 
-    <ImageView
-        android:id="@+id/aquariumCounterImage"
-        android:layout_width="87dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="250dp"
-        android:layout_marginBottom="235dp"
-        android:backgroundTint="@color/white"
-        android:foregroundGravity="center"
-        android:foregroundTint="@color/white"
-        android:src="@drawable/miniaquarium"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.351"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/dashboardImage"
-        app:layout_constraintVertical_bias="0.476" />
+    <data>
+        <variable
+            name="aquaCount"
+            type="String" />
+        <variable
+            name="todayCount"
+            type="int" />
+        <variable
+            name="overCount"
+            type="int" />
+        <variable
+            name="upCount"
+            type="int" />
+    </data>
 
-    <TextView
-        android:id="@+id/aquariumCount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="320dp"
-        android:layout_marginTop="217dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="19dp"
-        android:scaleX="3"
-        android:scaleY="3"
-        android:text="2"
-        android:textColor="@color/white"
-        android:textColorHighlight="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/dashboardImage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/dashboardImage"
-        app:layout_constraintStart_toStartOf="@+id/dashboardImage"
-        app:layout_constraintTop_toTopOf="@+id/dashboardImage" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.DashboardFragment">
 
-    <Button
-        android:id="@+id/todayButton"
-        style="@style/Widget.AppCompat.Button"
-        android:layout_width="163dp"
-        android:layout_height="138dp"
-        android:layout_marginEnd="230dp"
-        android:layout_marginBottom="300dp"
-        android:backgroundTint="@color/darkBlue"
-        android:text="Today:2"
-        android:textColor="@color/white"
-        android:textColorHighlight="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dashboardImage"
-        app:layout_constraintVertical_bias="1.0" />
+        <ImageView
+            android:id="@+id/dashboardImage"
+            android:layout_width="367dp"
+            android:layout_height="254dp"
+            android:layout_marginBottom="454dp"
+            android:cropToPadding="false"
+            android:src="@drawable/dashboard_image"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
-    <Button
-        android:id="@+id/overButton"
-        android:layout_width="182dp"
-        android:layout_height="62dp"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="9dp"
-        android:layout_marginEnd="112dp"
-        android:layout_marginBottom="300dp"
-        android:backgroundTint="@color/darkBlue"
-        android:text="overdue:2"
-        android:textColor="@color/white"
-        android:textColorHighlight="@color/white"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.075"
-        app:layout_constraintStart_toEndOf="@+id/todayButton"
-        app:layout_constraintTop_toBottomOf="@+id/dashboardImage"
-        app:layout_constraintVertical_bias="0.08" />
+        <ImageView
+            android:id="@+id/aquariumCounterImage"
+            android:layout_width="87dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="250dp"
+            android:layout_marginBottom="235dp"
+            android:backgroundTint="@color/white"
+            android:foregroundGravity="center"
+            android:foregroundTint="@color/white"
+            android:src="@drawable/miniaquarium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/aquariumCount"
+            app:layout_constraintHorizontal_bias="0.94"
+            app:layout_constraintStart_toStartOf="@+id/dashboardImage"
+            app:layout_constraintTop_toTopOf="@+id/dashboardImage"
+            app:layout_constraintVertical_bias="0.476" />
 
-    <Button
-        android:id="@+id/upButton"
-        android:layout_width="182dp"
-        android:layout_height="66dp"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="9dp"
-        android:layout_marginEnd="112dp"
-        android:layout_marginBottom="300dp"
-        android:backgroundTint="@color/darkBlue"
-        android:text="upcoming:2"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.075"
-        app:layout_constraintStart_toEndOf="@+id/todayButton"
-        app:layout_constraintTop_toBottomOf="@+id/dashboardImage"
-        app:layout_constraintVertical_bias="1.0" />
+        <TextView
+            android:id="@+id/aquariumCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="320dp"
+            android:layout_marginTop="217dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="19dp"
+            android:scaleX="3"
+            android:scaleY="3"
+            android:text="@{aquaCount}"
+            android:textColor="@color/white"
+            android:textColorHighlight="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/dashboardImage"
+            app:layout_constraintEnd_toEndOf="@+id/dashboardImage"
+            app:layout_constraintStart_toStartOf="@+id/dashboardImage"
+            app:layout_constraintTop_toTopOf="@+id/dashboardImage" />
 
-    <TextView
-        android:id="@+id/date"
-        android:layout_width="357dp"
-        android:layout_height="184dp"
-        android:text="TextView"
-        android:textAlignment="textStart"
-        android:textColor="@color/lightestBlue"
-        android:textColorHint="@color/white"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/todayButton"
-        app:layout_constraintVertical_bias="0.077" />
+        <Button
+            android:id="@+id/todayButton"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="163dp"
+            android:layout_height="138dp"
+            android:layout_marginBottom="300dp"
+            android:backgroundTint="@color/darkBlue"
+            android:text="@{@string/today_button_text(todayCount)}"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/overButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dashboardImage"
+            app:layout_constraintVertical_bias="1.0" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/overButton"
+            android:layout_width="182dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="300dp"
+            android:backgroundTint="@color/darkBlue"
+            android:text="@{@string/overdue_button_text(overCount)}"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.075"
+            app:layout_constraintStart_toEndOf="@+id/todayButton"
+            app:layout_constraintTop_toBottomOf="@+id/dashboardImage"
+            app:layout_constraintVertical_bias="0.08" />
+
+        <Button
+            android:id="@+id/upButton"
+            android:layout_width="182dp"
+            android:layout_height="66dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="300dp"
+            android:backgroundTint="@color/darkBlue"
+            android:text="@{@string/upcoming_button_text(upCount)}"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.51"
+            app:layout_constraintStart_toEndOf="@+id/todayButton"
+            app:layout_constraintTop_toBottomOf="@+id/dashboardImage"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

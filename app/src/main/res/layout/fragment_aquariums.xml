@@ -12,7 +12,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         tools:context=".fragments.AquariumsFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -42,14 +42,15 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/aquariumList"
             android:layout_width="match_parent"
-            android:layout_height="580dp"
-            android:layout_marginTop="100dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="100dp"
             android:clipToPadding="false"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toTopOf="@id/addButton"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.22000003"
             tools:listitem="@layout/list_item_aquarium" />
 
         <com.google.android.material.button.MaterialButton
@@ -64,7 +65,9 @@
             app:cornerRadius="40dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.8"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/aquariumList" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

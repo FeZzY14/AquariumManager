@@ -3,11 +3,18 @@
     <string name="substrateText">Substrate: %.1f /Tank: %.1f</string>
     <string name="volumeText">Water: %.1f</string>
     <string name="date">start date:\n%s</string>
+    <string name="date_item_text">%s date:\n%s</string>
     <string name="inhabitants">inhabitants\n%d</string>
     <string name="equipment">Equipment\n%d</string>
     <string name="tasks">tasks: %d</string>
     <string name="measurements">measurements: %d</string>
     <string name="noItemText">you hava no %ss you can add one with the plus button</string>
+    <string name="item_date">%s date</string>
+    <string name="item_set_date_button_text">Set %s date</string>
+    <string name="today_button_text">Today: %d</string>
+    <string name="overdue_button_text">overdue: %d</string>
+    <string name="upcoming_button_text">upcoming: %d</string>
+    <string name="noOverdueTasks">no overdue tasks</string>
     <string-array name="length_array">
         <item>mm</item>
         <item>cm</item>

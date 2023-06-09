@@ -1,25 +1,19 @@
 package com.example.aquariummanager.fragments
 
-import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
-import androidx.annotation.RequiresApi
-import androidx.core.view.get
-import androidx.core.view.isEmpty
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.aquariummanager.R
 import com.example.aquariummanager.adapters.AquariumsAdapter
 import com.example.aquariummanager.databinding.FragmentAquariumsBinding
 import com.example.aquariummanager.viewModels.AquariumsViewModel
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import java.time.LocalDate
 
 class AquariumsFragment : Fragment() {
 
@@ -44,6 +38,8 @@ class AquariumsFragment : Fragment() {
 
         binding.noAquariums = viewModel.list.isNotEmpty()
 
+        viewModel.imageByteArray = null
+
         return binding.root
     }
 
@@ -57,6 +53,11 @@ class AquariumsFragment : Fragment() {
 
     }
 
+    /**
+     * Slúži na zobrazenie okna s informáciou, či chceme naozaj ukončiť aplikáciu
+     *
+     * @param view pohľad
+     */
     private fun showExitDialogue() {
         MaterialAlertDialogBuilder(requireContext())
             .setMessage("do you want to exit?")

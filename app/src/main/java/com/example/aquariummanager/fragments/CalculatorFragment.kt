@@ -56,7 +56,7 @@ class CalculatorFragment : Fragment(){
             }
         }
 
-       //todo text watcher on input
+
         val textWatcher = object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -95,6 +95,7 @@ class CalculatorFragment : Fragment(){
             }
             override fun afterTextChanged(p0: Editable?) {}
         }
+
         binding.lengthTextInput.addTextChangedListener(textWatcher);
         binding.widthTextInput.addTextChangedListener(textWatcher);
         binding.heightTextInput.addTextChangedListener(textWatcher);
@@ -114,6 +115,10 @@ class CalculatorFragment : Fragment(){
         }
     }
 
+    /**
+     * Slúži na zobrazenie okna s informáciou, či chceme naozaj ukončiť aplikáciu
+     *
+     */
     private fun showExitDialogue() {
         MaterialAlertDialogBuilder(requireContext())
             .setMessage("do you want to exit?")

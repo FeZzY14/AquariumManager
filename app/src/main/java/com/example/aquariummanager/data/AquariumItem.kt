@@ -1,25 +1,27 @@
 package com.example.aquariummanager.data
 
 import android.graphics.Bitmap
+import android.net.Uri
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.Ignore
+import androidx.room.PrimaryKey
 
+@Entity(tableName = "aquariums")
 data class AquariumItem(
-    val name: String,
-    var image: Bitmap,
-    val startDate: String,
-    val volume: Double,
-    val description: String,
-    var measureParam: Double,
+    @PrimaryKey val index : Int,
+    @ColumnInfo(name = "name") val name: String,
+    @ColumnInfo(name = "image") var image: ByteArray?,
+    @ColumnInfo(name = "date")val startDate: String,
+    @ColumnInfo(name = "volume")val volume: Double,
+    @ColumnInfo(name = "description")val description: String,
+    @ColumnInfo(name = "parameter")var measureParam: Double,
 ) {
-    val equipment = ArrayList<String>()
-    val inhabitants = ArrayList<String>()
-    val measurements = ArrayList<Int>()
-    val tasks = ArrayList<String>()
-    fun addEquipment(newEquipment: String) {
-        equipment.add(newEquipment)
-    }
+    @Ignore val equipment = ArrayList<Item>()
+    @Ignore val inhabitants = ArrayList<Item>()
+    @Ignore val measurements = ArrayList<Measurement>()
+    @Ignore val tasks = ArrayList<Task>()
 
-    fun addInhabitant(newInhabitant: String) {
-        inhabitants.add(newInhabitant)
-    }
+
 
 }
